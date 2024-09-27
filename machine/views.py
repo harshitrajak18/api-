@@ -6,10 +6,13 @@ import joblib
 import numpy as np
 from .serializer import PredictionSerializer
 from rest_framework.decorators import api_view
+from django.conf import settings
 
 # Load the model and vectorizer at the module level
-loaded_model = joblib.load('E:\\api1\\ml\\sentiment.joblib')
-vect = joblib.load('E:\\api1\\ml\\vectorizer.joblib')
+model_path = os.path.join(settings.BASE_DIR, 'machine', 'models', 'sentiment.joblib')
+vectorizer_path = os.path.join(settings.BASE_DIR, 'machine', 'models', 'vectorizer.joblib')
+loaded_model = joblib.load(model_path)
+vect = joblib.load(vectorizer_path))
 
 @api_view(['POST'])
 def post(request):
