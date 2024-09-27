@@ -12,7 +12,7 @@ from django.conf import settings
 model_path = os.path.join(settings.BASE_DIR, 'machine', 'models', 'sentiment.joblib')
 vectorizer_path = os.path.join(settings.BASE_DIR, 'machine', 'models', 'vectorizer.joblib')
 loaded_model = joblib.load(model_path)
-vect = joblib.load(vectorizer_path))
+vect = joblib.load(vectorizer_path)
 
 @api_view(['POST'])
 def post(request):
