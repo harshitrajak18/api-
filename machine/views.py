@@ -7,6 +7,7 @@ import numpy as np
 from .serializer import PredictionSerializer
 from rest_framework.decorators import api_view
 from django.conf import settings
+import os
 
 # Load the model and vectorizer at the module level
 model_path = os.path.join(settings.BASE_DIR, 'machine', 'models', 'sentiment.joblib')
